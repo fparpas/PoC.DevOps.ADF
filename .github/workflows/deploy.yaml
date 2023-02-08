@@ -14,10 +14,10 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  DeployUAT:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
+    environment: UAT
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -30,3 +30,19 @@ jobs:
           resourceGroupName: Synapse
           template: adfsingle/ARMTemplateForFactory.json
           parameters: adfsingle/ARMTemplateForFactory.json factoryName=uatadfsingle
+  DeployProd:
+  # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    environment: Production
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      - uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - uses: azure/arm-deploy@v1
+        with:
+          resourceGroupName: Synapse
+          template: adfsingle/ARMTemplateForFactory.json
+          parameters: adfsingle/ARMTemplateForFactory.json factoryName=${{ env.FACTORY_NAME }}
