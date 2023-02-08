@@ -27,6 +27,6 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
       - uses: azure/arm-deploy@v1
         with:
-          resourceGroupName: github-action-arm-rg
+          resourceGroupName: Synapse
           template: adfsingle/ARMTemplateForFactory.json
           parameters: adfsingle/ARMTemplateForFactory.json factoryName=uatadfsingle
