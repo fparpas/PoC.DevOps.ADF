@@ -29,7 +29,7 @@ jobs:
         with:
           resourceGroupName: Synapse
           template: adfsingle/ARMTemplateForFactory.json
-          parameters: adfsingle/ARMTemplateForFactory.json factoryName=uatadfsingle
+          parameters: adfsingle/ARMTemplateForFactory.json factoryName=${{ vars.FACTORY_NAME }} 
   Deploy_Prod:
   # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -46,4 +46,4 @@ jobs:
         with:
           resourceGroupName: Synapse
           template: adfsingle/ARMTemplateForFactory.json
-          parameters: adfsingle/ARMTemplateForFactory.json factoryName=prodadfsingle
+          parameters: adfsingle/ARMTemplateForFactory.json factoryName=${{ vars.FACTORY_NAME }} 
