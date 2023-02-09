@@ -1,0 +1,9 @@
+{
+	"name": "poc-adf-devops-dev",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "cb15a047-7a85-40b6-853d-2a63e750275d",
+		"tenantId": "1fb92cda-4c8b-4de2-aea0-e2aebae322c1"
+	}
+}
