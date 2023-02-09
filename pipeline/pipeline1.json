@@ -9,7 +9,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"expression": {
-						"value": "@equals(0,4)",
+						"value": "@equals(0,5)",
 						"type": "Expression"
 					}
 				}
