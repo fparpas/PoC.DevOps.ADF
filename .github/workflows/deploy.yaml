@@ -33,7 +33,7 @@ jobs:
           resourceGroupName: Synapse
           dataFactoryName: ${{ vars.FACTORY_NAME }} 
           armTemplateFile: poc-adf-devops-dev/ARMTemplateForFactory.json
-          armTemplateParametersFile: poc-adf-devops-dev/ARMTemplateForFactory.json
+          armTemplateParametersFile: poc-adf-devops-dev/ARMTemplateParametersForFactory.json
           # additionalParameters: 'key1=value key2=value keyN=value' [optional]
           # skipAzModuleInstallation: true [optional]
   Deploy_Prod:
@@ -52,4 +52,4 @@ jobs:
         with:
           resourceGroupName: Synapse
           template: poc-adf-devops-dev/ARMTemplateForFactory.json
-          parameters: poc-adf-devops-dev/ARMTemplateForFactory.json factoryName=${{ vars.FACTORY_NAME }} 
+          parameters: poc-adf-devops-dev/ARMTemplateParametersForFactory.json factoryName=${{ vars.FACTORY_NAME }} 
